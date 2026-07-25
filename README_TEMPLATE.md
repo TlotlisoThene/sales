@@ -1,530 +1,206 @@
-# [Project Title]
-> *One sentence. What did you analyze, build, or solve - and why does it matter?*
-
----
-
-## ⚙️ Project Type Flags
-> *Check what applies. This helps reviewers and collaborators understand the nature of the work at a glance. Delete this block before publishing.*
-
-- [ ] Exploratory Data Analysis (EDA)
-- [ ] SQL Analysis / Querying
-- [ ] Dashboard / Data Visualization
-- [ ] Data Pipeline / ETL
-- [ ] Predictive Modelling / Machine Learning
-- [ ] Data Cleaning / Wrangling
-- [ ] End-to-End (multiple of the above)
-- [ ] Other: ___________
-
----
+# Retail Sales Performance Analysis (Microsoft Excel)
 
 ## Table of Contents
 1. [Project Overview](#1-project-overview)
-2. [Objectives](#2-objectives)
-3. [Project Scope & Tools](#3-project-scope--tools)
-4. [Repository Structure](#4-repository-structure)
-5. [Data Workflow](#5-data-workflow)
-6. [Data Model & Schema](#6-data-model--schema)
-7. [ERD - Entity Relationship Diagram](#7-erd--entity-relationship-diagram) *(SQL projects)*
-8. [Analysis & Metrics](#8-analysis--metrics)
-9. [Key Insights](#9-key-insights)
-10. [Recommendations](#10-recommendations)
-11. [Assumptions & Limitations](#11-assumptions--limitations)
-12. [Future Enhancements](#12-future-enhancements)
-13. [Deliverables](#13-deliverables)
-14. [Author](#14-author)
+2. [Business Background](#2-business-background)
+3. [Business Problem](#3-business-problem)
+4. [Business Objectives](#4-business-objectives)
+5. [Tools & Technologies](#5-tools--technologies)
+6. [Methodology](#6-methodology)
+7. [Dashboard](#7-dashboard)
+8. [Key Insights](#8-key-insights)
+9. [Business Recommendations](#9-business-recommendations)
+10. [Challenges & Limitations](#10-challenges--limitations)
+11. [Author](#11-author)
 
 ---
 
 ## 1. Project Overview
 
-<!--
-  Write 3–5 sentences in plain language.
-  Cover: context → problem → approach → outcome.
-  Read it out loud. If it sounds like a form - rewrite it.
+This project analyzes **UrbanCart's 2022 annual sales performance** using Microsoft Excel to uncover customer purchasing patterns, sales trends, and channel performance. The objective was to transform raw sales data into meaningful business insights that support data-driven decision-making and help the business improve sales performance in 2023.
 
-  WHAT GOOD LOOKS LIKE:
-  "A mid-size retail business was seeing inconsistent revenue across
-  its regional stores but couldn't identify the root cause. This project
-  explored 18 months of transaction data across five regions to determine
-  whether underperformance was driven by sales volume, pricing, or return
-  rates. The analysis revealed that one region's gap was almost entirely
-  explained by an unusually high return rate on a single product category -
-  a finding invisible in the company's top-level reporting."
-
-  WHAT TO AVOID:
-  "This project analyzes sales data to find trends and insights."
-  (Too vague. Could describe 10,000 projects. Describes none of them.)
--->
-
-**Context:** [The business, research, or personal situation that motivated this project.]
-
-**Problem Statement:** [The specific question or challenge you were addressing.]
-
-**Approach:** [In 1–2 sentences - how did you tackle it?]
-
-**Outcome:** [What did you produce or discover?]
+The project demonstrates the complete analytics workflow—from data cleaning and preparation to interactive dashboard creation in Excel—providing stakeholders with an overview of customer demographics, sales performance, product categories, and sales channels.
 
 ---
 
-## 2. Objectives
+## 2. Business Background
 
-<!--
-  Write objectives that are specific enough to succeed or fail.
-  Use action-oriented verbs: Identify, Determine, Quantify, Build, Evaluate.
+UrbanCart is an online retail store that sells products through multiple e-commerce platforms. As customer preferences and shopping behaviors continue to evolve, understanding sales performance and consumer purchasing patterns has become essential for making informed business decisions.
 
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Determine whether customer churn rate correlates with support ticket volume."
-  ✅ "Identify the top three revenue-driving product categories across all regions."
-  ✅ "Build a reproducible pipeline that ingests and cleans daily sales exports."
-
-  WHAT TO AVOID:
-  ❌ "Explore the data."
-  ❌ "Gain insights."
-  ❌ "Understand trends."
-  (These can't fail - which means they can't succeed either.)
--->
-
-- **Primary Objective:** [The main thing you set out to do]
-- **Secondary Objective 1:** [Supporting goal]
-- **Secondary Objective 2:** [Supporting goal]
-- **Secondary Objective 3:** [Remove if not applicable]
-
-> 💡 *Every analysis decision in this project traces back to one of these objectives.*
+By analyzing annual sales data, UrbanCart can identify its most valuable customer segments, best-performing sales channels, top-selling product categories, and regional sales performance to improve future marketing and sales strategies.
 
 ---
 
-## 3. Project Scope & Tools
+## 3. Business Problem
 
-### Scope
+UrbanCart wanted to evaluate its sales performance for **2022** to better understand customer behavior and identify opportunities for business growth in **2023**.
 
-<!--
-  WHAT GOOD LOOKS LIKE:
-  In Scope: "Transaction-level data for Regions A–E, Jan 2023–Jun 2024.
-             Analysis covers revenue, return rates, and product category performance."
-  Out of Scope: "Customer demographics and marketing spend data were excluded -
-                 demographic data was incomplete for two regions, and marketing
-                 data sits in a separate system outside this engagement."
+The management team needed answers to important business questions regarding customer demographics, purchasing behavior, sales channels, regional performance, and product categories.
 
-  WHAT TO AVOID:
-  ❌ Leaving Out of Scope blank. This is the section that protects your credibility.
-     If you don't define the fence, reviewers assume you missed things.
--->
+The primary business question was:
 
-| Dimension | Details |
-|-----------|---------|
-| **In Scope** | [What is included - data sources, time periods, segments] |
-| **Out of Scope** | [What you explicitly excluded - and a brief reason why] |
-| **Time Period** | [Date range of the data or the project itself] |
-| **Granularity** | [Unit of analysis - row-level, daily aggregates, per-user, etc.] |
-
-### Tools & Technologies
-
-<!--
-  List only what you actually used on this project.
-  This is not your skills section - it's the project's technical context.
--->
-
-| Category | Tool(s) Used |
-|----------|-------------|
-| Data Storage | [e.g., PostgreSQL, CSV files, BigQuery, S3] |
-| Data Processing | [e.g., Python, R, SQL, Excel, dbt] |
-| Analysis | [e.g., pandas, dplyr, custom SQL queries] |
-| Visualization | [e.g., Matplotlib, Tableau, Power BI, Looker] |
-| Version Control | [e.g., Git / GitHub] |
-| Documentation | [e.g., Markdown, Notion] |
-| Other | [Any additional tools] |
+> **How can UrbanCart leverage its 2022 sales data to better understand customer purchasing behavior and develop strategies to increase sales in 2023?**
 
 ---
 
-## 4. Repository Structure
+## 4. Business Objectives
 
-```
-[project-root]/
-│
-├── data/
-│   ├── raw/                  # Original, unmodified source data - never edited
-│   ├── processed/            # Cleaned and transformed data
-│   └── external/             # Reference data, lookup tables, third-party files
-│
-├── notebooks/                # Jupyter, R Markdown, or Colab notebooks
-│
-├── scripts/                  # Reusable .py, .R, or .sh processing files
-│
-├── queries/                  # SQL files (retain this folder for SQL-heavy projects)
-│   ├── exploratory/          # Ad-hoc or investigative queries
-│   ├── transformations/      # Cleaning and reshaping logic
-│   └── final/                # Production-ready or presentation queries
-│
-├── reports/                  # Final outputs: PDFs, slide decks, Word docs
-│
-├── visuals/                  # Exported charts, dashboard screenshots, ERD diagrams
-│
-├── docs/                     # Data dictionaries, schema notes, reference material
-│
-├── project_metadata.yml      # Machine-readable metadata (optional)
-└── README.md                 # You are here
-```
+The primary objectives of this project are to:
 
-> ⚠️ *Delete folders you didn't use. An empty folder is worse than no folder.*
-> SQL-heavy projects: keep `queries/`. Analysis-only projects: keep `notebooks/`. Both? Keep both.
+- Analyze annual sales and order trends throughout 2022.
+- Compare monthly sales and order performance to identify seasonal trends.
+- Understand customer purchasing behavior across different genders and age groups.
+- Identify the top-performing states contributing to total sales.
+- Evaluate the performance of different sales channels.
+- Determine the highest-selling product categories.
+- Analyze order status distribution to understand order fulfillment performance.
+- Develop an interactive Excel dashboard that enables stakeholders to monitor key business metrics and support data-driven decision-making.
 
 ---
 
-## 5. Data Workflow
+## 5. Tools & Technologies
 
-<!--
-  Show how data moved through your project - from source to output.
-  Every transformation decision should be traceable here.
-
-  WHAT GOOD LOOKS LIKE:
-  1. Source: "Monthly CSV exports pulled from the internal POS system.
-              Five files, one per region, covering Jan 2023–Jun 2024."
-  2. Ingestion: "Loaded into Python using pandas. Files concatenated into
-                 a single dataframe (approx. 340,000 rows)."
-  3. Cleaning: "Removed 1.2% of rows with null transaction IDs.
-                Standardised date formats across regional files.
-                Resolved product category naming inconsistencies (3 variants → 1)."
-  4. Transformation: "Created a returns_rate field at product-category level.
-                      Aggregated to weekly and regional grain for trend analysis."
-  5. Analysis: "Descriptive statistics, regional comparison, return rate
-                segmentation by product category."
-  6. Output: "Summary report (PDF), annotated notebook, processed CSV."
-
-  WHAT TO AVOID:
-  ❌ "Data was cleaned and analysed." (No chain. No decisions. No trust.)
--->
-
-```
-[Data Source(s)]
-      ↓
-[Ingestion / Collection Method]
-      ↓
-[Cleaning & Transformation]
-      ↓
-[Analysis / Modelling / Querying]
-      ↓
-[Output / Visualisation / Reporting]
-```
-
-1. **Source:** [Where did the data come from? Format, size, access method.]
-2. **Ingestion:** [How was it brought in?]
-3. **Cleaning:** [What issues did you find and fix?]
-4. **Transformation:** [What new fields, aggregations, or structures did you create?]
-5. **Analysis:** [What methods - statistical, visual, query-based, model-based?]
-6. **Output:** [What form do the results take?]
+| Tool | Purpose |
+|------|---------|
+| Microsoft Excel | Data Cleaning, Analysis & Dashboard Development |
+| Pivot Tables | Data Aggregation & Analysis |
+| Pivot Charts | Data Visualization |
+| Slicers | Interactive Dashboard Filtering |
 
 ---
 
-## 6. Data Model & Schema
+## 6. Methodology
 
-<!--
-  Define your fields so that someone reading your analysis can follow along
-  without digging through your code.
+### 1. Data Preparation (Excel)
 
-  WHAT GOOD LOOKS LIKE (one row example):
-  | transaction_id | string | Unique identifier per sales transaction | TXN-00482 |
-  | return_flag    | boolean | Whether the transaction included a return | TRUE |
-  | region_code    | string | Two-letter identifier for store region | "NE" |
+The raw sales dataset was cleaned and prepared to ensure accurate analysis and reporting.
 
-  WHAT TO AVOID:
-  ❌ Skipping this section because "the field names are self-explanatory."
-     They're not. Not to a reviewer. Not to you in six months.
+#### Data Cleaning
 
-  📌 FOR SQL PROJECTS: If you have multiple tables, create one block per table.
-     Describe join keys and relationships here. Your ERD (Section 7) will
-     visualise what this section describes in text.
-
-  📌 FOR NON-SQL PROJECTS: Describe the shape of your dataset informally
-     if a formal schema doesn't apply. Even one paragraph is more helpful than nothing.
--->
-
-### Dataset / Table: `[name]`
-
-| Field Name | Data Type | Description | Example Value |
-|------------|-----------|-------------|---------------|
-| `[field_1]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_2]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_3]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-
-> **Row count (approx.):** [X rows]
-> **Date range:** [Start] – [End]
-> **Key join / relationship:** [e.g., `orders.customer_id` → `customers.id`]
-
-*Add additional table blocks as needed for multi-table projects.*
+- Inspected the dataset for missing and inconsistent values.
+- Removed duplicate records where necessary.
+- Standardized data formatting.
+- Verified data accuracy across key variables.
+- Prepared the dataset for Pivot Table analysis.
 
 ---
 
-## 7. ERD - Entity Relationship Diagram
-### *(Primarily for SQL Projects - remove this section if not applicable)*
+### 2. Data Analysis (Excel)
 
-<!--
-  An ERD shows how your tables connect to each other visually.
-  It is the fastest way for a reviewer to understand the data structure
-  of a SQL project without reading every query.
+Excel Pivot Tables were used to answer key business questions, including:
 
-  HOW TO INCLUDE YOUR ERD:
-  Option A - Image embed (most common):
-    Export your ERD from dbdiagram.io, DBeaver, Lucidchart, or similar.
-    Save to /visuals/erd.png and reference it below.
-
-  Option B - dbdiagram.io code block (version-controllable):
-    Paste your schema definition code directly in the fenced block below.
-    Anyone can paste it into dbdiagram.io to regenerate the visual.
-
-  Option C - Mermaid diagram (renders natively in GitHub):
-    Use the mermaid code block syntax below.
-    GitHub will render this as a diagram automatically.
-
-  PICK ONE. Don't use all three. Delete the options you don't use.
--->
-
-### Option A - Embedded Image
-![ERD Diagram](visuals/erd.png)
-*[Brief caption: e.g., "Three-table schema - orders, customers, and products joined on shared IDs."]*
+- Comparing monthly sales and order trends.
+- Identifying the month with the highest sales and orders.
+- Comparing purchases made by men and women.
+- Analyzing order status distribution.
+- Identifying the top 10 states contributing to sales.
+- Examining the relationship between customer age and gender.
+- Evaluating sales performance across different sales channels.
+- Identifying the highest-selling product categories.
 
 ---
 
-### Option B - dbdiagram.io Schema Definition
-```
-Table orders {
-  order_id    int     [pk]
-  customer_id int     [ref: > customers.customer_id]
-  product_id  int     [ref: > products.product_id]
-  order_date  date
-  amount      float
-}
+### 3. Dashboard Development (Excel)
 
-Table customers {
-  customer_id int  [pk]
-  region_code string
-  signup_date date
-}
+An interactive dashboard was created using Pivot Tables, Pivot Charts, KPIs, and Slicers to provide stakeholders with an intuitive overview of business performance.
 
-Table products {
-  product_id   int    [pk]
-  category     string
-  unit_price   float
-}
-```
-*Paste this into [dbdiagram.io](https://dbdiagram.io) to view the visual.*
+The dashboard enables users to:
+
+- Monitor monthly sales and order trends.
+- Compare customer demographics.
+- Analyze regional sales performance.
+- Evaluate sales channels.
+- Track product category performance.
+- Filter the dashboard dynamically using slicers.
 
 ---
 
-### Option C - Mermaid Diagram *(renders on GitHub)*
-```mermaid
-erDiagram
-    ORDERS {
-        int order_id PK
-        int customer_id FK
-        int product_id FK
-        date order_date
-        float amount
-    }
-    CUSTOMERS {
-        int customer_id PK
-        string region_code
-        date signup_date
-    }
-    PRODUCTS {
-        int product_id PK
-        string category
-        float unit_price
-    }
-    ORDERS ||--o{ CUSTOMERS : "placed by"
-    ORDERS ||--o{ PRODUCTS : "contains"
-```
+## 7. Dashboard
+
+The dashboard provides an interactive overview of UrbanCart's annual sales performance through dynamic charts and visualizations.
+
+### Dashboard Highlights
+
+- Monthly Sales vs Orders
+- Sales by Gender
+- Sales by Age Group
+- Top 10 States by Sales
+- Order Status Distribution
+- Sales by Channel
+- Product Category Performance
+- Interactive Slicers
+
+> **Insert dashboard screenshot(s) here**
 
 ---
 
-**Table Relationships Summary:**
+## 8. Key Insights
 
-| Relationship | Join Key | Type |
-|-------------|----------|------|
-| `orders` → `customers` | `customer_id` | Many-to-One |
-| `orders` → `products` | `product_id` | Many-to-One |
-| [Add rows as needed] | | |
+The analysis revealed several important business insights:
 
----
-
-## 8. Analysis & Metrics
-
-<!--
-  Explain what you measured and how - before you share what you found.
-
-  WHAT GOOD LOOKS LIKE:
-  Metric: "Customer Return Rate"
-  Definition: "Number of transactions flagged as returns divided by total
-               transactions, calculated at product-category and regional grain."
-  Why It Matters: "Return rate - not sales volume - was hypothesised to
-                  explain regional revenue gaps. This metric tests that hypothesis."
-
-  WHAT TO AVOID:
-  ❌ Defining a metric only in code: SUM(returns) / COUNT(transaction_id)
-     That's an implementation. Write the plain-language definition here.
-     Both belong in your project - the definition in the README,
-     the implementation in the code.
--->
-
-### Analytical Approach
-
-[Describe how you approached the analysis. Were you exploring patterns? Testing a hypothesis? Building and validating a pipeline? Be honest about your method - exploratory work is valid, just call it that.]
-
-### Key Metrics Defined
-
-| Metric | Plain-Language Definition | Why It Matters |
-|--------|--------------------------|----------------|
-| `[Metric 1]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 2]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 3]` | [What it measures, in one sentence] | [What decision or question it answers] |
-
-### Methods Used
-
-- [e.g., Descriptive statistics - distribution, central tendency, outlier detection]
-- [e.g., Trend analysis across [time period]]
-- [e.g., Segmentation / group comparison by [dimension]]
-- [e.g., Correlation analysis between [variable A] and [variable B]]
-- [e.g., SQL window functions for [specific aggregation]]
-- [e.g., Custom aggregation or transformation logic in [tool]]
+- Women accounted for approximately **65%** of total purchases, making them the store's primary customer segment.
+- Customers aged **30–49 years** contributed nearly **50%** of total sales, making adults the highest-value age group.
+- **Maharashtra, Karnataka, and Uttar Pradesh** generated approximately **35%** of total sales, making them the strongest-performing states.
+- **Amazon, Flipkart, and Myntra** accounted for nearly **80%** of all sales, highlighting the importance of online marketplace channels.
+- Monthly sales trends revealed fluctuations throughout the year, providing valuable insights for inventory planning and promotional campaigns.
+- Certain product categories consistently outperformed others, indicating higher customer demand.
 
 ---
 
-## 9. Key Insights
+## 9. Business Recommendations
 
-<!--
-  Findings + implications. Not just what happened - what it means.
+Based on the analysis, the following recommendations were made:
 
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Return rates, not sales volume, explain Region A's underperformance.
-      Region A's return rate on home goods was 34% - more than double the
-      company average. Revenue was not lost at the point of sale; it was
-      lost post-sale through refunds. This points to a fulfilment or
-      product quality issue specific to that region, not a demand problem."
+### Target High-Value Customers
 
-  WHAT TO AVOID:
-  ❌ "Region A had lower revenue than other regions in Q4."
-     (That's an observation. It describes what happened.
-      An insight says what it means and where to look next.)
+Focus marketing campaigns on **women aged 30–49 years**, as they represent the largest and most valuable customer segment.
 
-  Aim for 3–6 insights. Quality over quantity.
--->
+### Strengthen Presence in Top Markets
 
-**Insight 1: [Short descriptive headline]**
-[What you found + what it suggests. One short paragraph.]
+Increase advertising, promotions, and inventory availability in **Maharashtra, Karnataka, and Uttar Pradesh**, where customer demand is highest.
 
-**Insight 2: [Short descriptive headline]**
-[What you found + what it suggests.]
+### Optimize Marketplace Strategy
 
-**Insight 3: [Short descriptive headline]**
-[What you found + what it suggests.]
+Continue investing in **Amazon, Flipkart, and Myntra**, as these platforms contribute the majority of total sales.
 
-**Insight 4 (if applicable): [Short descriptive headline]**
-[What you found + what it suggests.]
+### Promote Best-Selling Categories
+
+Increase the visibility of high-performing product categories through featured campaigns and promotional offers.
+
+### Improve Seasonal Planning
+
+Use monthly sales trends to optimize inventory management and schedule marketing campaigns during peak sales periods.
+
+### Enhance Customer Retention
+
+Introduce loyalty programs, personalized offers, and targeted discounts to encourage repeat purchases and strengthen long-term customer relationships.
 
 ---
 
-## 10. Recommendations
+## 10. Challenges & Limitations
 
-<!--
-  Action-oriented. Addressed to a real audience.
-  Tied explicitly to the insight that supports each one.
+### Challenges
 
-  WHAT GOOD LOOKS LIKE:
-  Priority: High
-  Recommendation: "Conduct a fulfilment audit for home goods deliveries
-                   in Region A - specifically investigating whether returns
-                   correlate with a particular warehouse, carrier, or SKU batch."
-  Based On: Insight 1 - return rate anomaly in Region A
-  Owner: Operations / Supply Chain team
-
-  WHAT TO AVOID:
-  ❌ "Improve the return rate."
-     (Not actionable. Doesn't say who, how, or where to start.)
-  ❌ "Further analysis is needed."
-     (This is a placeholder, not a recommendation.)
--->
-
-| Priority | Recommendation | Based On | Suggested Owner |
-|----------|---------------|----------|-----------------|
-| High | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Medium | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Low | [Exploratory or longer-term suggestion] | [Insight it comes from] | [Who should act] |
-
----
-
-## 11. Assumptions & Limitations
-
-<!--
-  WHAT GOOD LOOKS LIKE:
-  Assumption: "Transaction records were assumed to be complete for all five regions.
-               No validation was performed against source system record counts."
-  Limitation: "The analysis cannot distinguish between returns initiated by
-               the customer vs. returns initiated by the business (e.g., recalls).
-               If business-initiated returns are concentrated in Region A, the
-               return rate finding may reflect a policy decision, not a quality issue."
-
-  WHAT TO AVOID:
-  ❌ Leaving this section blank or writing "None known."
-     Every project has limitations. Documenting them is a sign of
-     analytical maturity - not a confession of failure.
--->
-
-### Assumptions
-- [What did you treat as true without being able to verify?]
-- [What simplifications did you make for scope or feasibility?]
-- [What domain rules or definitions did you accept as given?]
+- Preparing and validating raw sales data before analysis.
+- Consolidating multiple business metrics into a single interactive dashboard.
+- Designing visualizations that effectively communicate insights to stakeholders.
 
 ### Limitations
-- [What gaps exist in the data?]
-- [What analysis was out of scope but could affect interpretation?]
-- [What would a more rigorous version of this project include?]
-- [Are there known biases in the data source or collection method?]
 
-> *The goal here is pre-emptive Q&A. What would a thoughtful skeptic push back on? Document the answer here, before they ask.*
+- The analysis is based solely on **2022** sales data and does not capture long-term customer behavior.
+- External factors such as economic conditions, competitor activities, and market trends were not included in the analysis.
+- Customer lifetime value and profitability could not be evaluated due to limited historical customer data.
 
 ---
 
-## 12. Future Enhancements
+## 11. Author
 
-<!--
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Automate the monthly data pull from the POS export folder using
-      a scheduled Python script, replacing the current manual process."
-  ✅ "Expand the return rate analysis to include carrier-level data,
-      which was unavailable in this dataset but exists in the logistics system."
+**Thene Tlotliso**
 
-  WHAT TO AVOID:
-  ❌ "Add a machine learning model."
-     (Vague, and disconnected from the actual findings of this project.)
-  ❌ Listing aspirational features that don't follow logically from the work.
--->
-
-- [ ] [Enhancement 1 - specific and traceable to a real gap in this project]
-- [ ] [Enhancement 2]
-- [ ] [Enhancement 3]
-- [ ] [Enhancement 4]
+- 🔗 LinkedIn: *[Your LinkedIn URL]*
+- 💼 Portfolio: https://tlotlisothene.github.io/
+- 📧 thenetlotliso@gmail.com
 
 ---
 
-## 13. Deliverables
-
-| Deliverable | Description | Location |
-|-------------|-------------|----------|
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
-
----
-
-## 14. Author
-
-**[Your Name]**
-[Your role or title - current or target]
-
-- 🔗 [LinkedIn URL]
-- 💼 [Portfolio or GitHub profile URL]
-- 📧 [Email - optional]
-
----
-
-*Last updated: [Month YYYY]*
-*If this template helped you, consider starring the repository.*
+*Last updated: July 2026*
